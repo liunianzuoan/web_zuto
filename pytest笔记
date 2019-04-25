@@ -1,0 +1,51 @@
+1.安装pytest   pip install pytest
+2.导入
+3.pytest的好处：
+   标记用例  @pytest.mark.smoke  执行的时候 pytest -m smoke
+   不需要入口，自动项目中的用例,以test开头或者结尾
+   如果要运行class里面的函数，类需要以Test开头，函数要以test开头
+   不能有init函数
+   断言 assert +表达式
+   环境管理更灵活
+   和unittest是兼容的（既可以使用unittest，也可以使用pytest）
+   有很多插件，安装html  生成报告，pytestallure等
+   测试报告  log,html,xml
+   --junit-xml=path
+   --result-log=path
+
+4.怎么样运行pytest
+通过命令行或者是main文件执行
+
+5.安装html测试报告插件  pip install pytest-html
+6.安装allure，是跨平台的插件 pip install allure-pytest
+
+7.环境管理的灵活性  每条用例对应的执行的环境和条件有可能都不一样
+我们采用fixture，不只用户python  php也可以
+
+
+8.fixture  中yield的使用 自己拓展   面试可能问到生成器的用法
+
+fixture不能和unittest中的ddt混合使用
+
+9.pytest重运行机制
+
+pytest提供了失败重试机制
+插件名称：rerunfailures
+安装方法：pip install pytest-rerunfailures
+
+使用方式：
+命令行参数形式
+命令：pytest --reruns 重试次数
+比如：pytest --reruns 4 表示运行失败的用例可以运行4次
+
+命令：Pytest --reruns 重试次数 --reruns-delay 次数之间的延时设置（秒）
+Pytest --reruns 2 --reeuns-delay5 表示失败的用例可以重新运行2次，第一次和第二次的间隔时间为5秒
+
+
+
+分布式系统
+
+
+
+
+
